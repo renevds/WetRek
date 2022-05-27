@@ -37,6 +37,10 @@ class Vector {
     this.content = args // Set vector content
   }
 
+  getInstance(...args){
+    return new Vector(...args);
+  }
+
   get isNumberType(){
     return this.type === NUMBER_TYPE
   }
@@ -56,9 +60,9 @@ class Vector {
     this.checkIfVector(v)
     !this.checkSameType(v) && this.vectorError(`Cant add ${this.name} with type ${v.type.toString()} to ${v.name} with type ${this.type.toString()}`) // Check if types match
     if (this.isNumberType) {
-      return new Vector(...this.content.map((val, i) => val + v.content[i]))
+      return this.getInstance(...this.content.map((val, i) => val + v.content[i]))
     } else {
-      return new Vector(...this.content.map((val, i) => val.add(v.content[i])))
+      return this.getInstance(...this.content.map((val, i) => val.add(v.content[i])))
     }
   }
 
@@ -66,17 +70,17 @@ class Vector {
     this.checkIfVector(v)
     !this.checkSameType(v) && this.vectorError(`Cant subtract ${this.name} with type ${v.type.toString()} to ${v.name} with type ${this.type.toString()}`) // Check if types match
     if (this.isNumberType) {
-      return new Vector(...this.content.map((val, i) => val - v.content[i]))
+      return this.getInstance(...this.content.map((val, i) => val - v.content[i]))
     } else {
-      return new Vector(...this.content.map((val, i) => val.sub(v.content[i])))
+      return this.getInstance(...this.content.map((val, i) => val.sub(v.content[i])))
     }
   }
 
   scalar_mul(a){
     if (this.isNumberType) {
-      return new Vector(...this.content.map(val => val*a))
+      return this.getInstance(...this.content.map(val => val*a))
     } else {
-      return new Vector(...this.content.map(val => val.mul(a)))
+      return this.getInstance(...this.content.map(val => val.mul(a)))
     }
   }
 

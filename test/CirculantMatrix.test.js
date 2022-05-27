@@ -1,4 +1,4 @@
-const {CirculantMatrix} = require("../src/CirculantMatrix");
+const {CirculantMatrix} = require("../src/circulantMatrix");
 const Complex = require("complex.js");
 const {Vector} = require("../src/Vector");
 const {mod} = require("../util/mathUtils");
@@ -92,12 +92,10 @@ describe("CirculantMatrix Tests", () => {
   describe("CirculantMatrix string representation", () => {
     test('Test CirculantMatrix with size 3x3', () => {
       const v1 = new CirculantMatrix(1, 2, 3)
-      console.log(v1.toString())
     });
 
     test('Test CirculantMatrix with size 5x5', () => {
       const v1 = new CirculantMatrix(1, 2, 3, 4, 5)
-      console.log(v1.toString())
     });
   })
 
@@ -132,14 +130,11 @@ describe("CirculantMatrix Tests", () => {
       const m3 = m1.mul(m2)
       expect(m3.get(0,0)).toEqual(8)
       expect(m3.get(1,0)).toEqual(7)
-      console.log(m3.toString())
     });
 
     test('Multiply 3x3 number CirculantMatrix with CirculantMatrix', () => {
       const m1 = new CirculantMatrix(1, 2, 3)
       const m3 = m1.mul(m1)
-      console.log(m3)
-      console.log(m3.toString())
       expect(m3.get(0,0)).toEqual(14)
       expect(m3.get(1,0)).toEqual(11)
       expect(m3.get(2,0)).toEqual(11)

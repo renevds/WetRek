@@ -1,8 +1,12 @@
 {
   "dependencies": {
-    "complex.js": "^2.1.1"
+    "complex.js": "^2.1.1",
+    "plotly": "^1.0.6"
   },
   "devDependencies": {
     "jest": "^28.1.0"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

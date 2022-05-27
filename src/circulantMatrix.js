@@ -6,6 +6,10 @@ class CirculantMatrix extends Vector {
     return "CirculantMatrix";
   }
 
+  getInstance(...args){
+    return new CirculantMatrix(...args);
+  }
+
   get(i, j) {
     return this.content[mod((i - j), this.size)]
   }
